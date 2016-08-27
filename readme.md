@@ -5,7 +5,6 @@
 [![windows build](https://img.shields.io/appveyor/ci/start-runner/copy.svg?label=windows&style=flat-square)](https://ci.appveyor.com/project/start-runner/copy)
 [![coverage](https://img.shields.io/codecov/c/github/start-runner/copy.svg?style=flat-square)](https://codecov.io/github/start-runner/copy)
 [![deps](https://img.shields.io/gemnasium/start-runner/copy.svg?style=flat-square)](https://gemnasium.com/start-runner/copy)
-[![gitter](https://img.shields.io/badge/gitter-join_chat_%E2%86%92-46bc99.svg?style=flat-square)](https://gitter.im/start-runner/start)
 
 Copy task for [Start](https://github.com/start-runner/start).
 
