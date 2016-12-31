@@ -10,8 +10,10 @@ Copy task for [Start](https://github.com/start-runner/start).
 
 ## Install
 
-```
-npm i -S start-copy
+```sh
+npm install --save-dev start-copy
+# or
+yarn add --dev start-copy
 ```
 
 ## Usage
@@ -22,24 +24,26 @@ import reporter from 'start-pretty-reporter';
 import files from 'start-files';
 import copy from 'start-copy';
 
-export function build() {
-    return start(reporter())(
-        files('src/**/*.png'),
-        copy('build/')
-    );
-}
+export const build = () => start(reporter())(
+  files('src/**/*.png'),
+  copy('build/')
+);
 ```
 
 is functionally the same as:
 
 ```js
-export function build() {
-    return start(reporter())(
-        files('src/**/*.png'),
-        read(),
-        write('build/')
-    );
-}
+import start from 'start';
+import reporter from 'start-pretty-reporter';
+import files from 'start-files';
+import read from 'start-read';
+import write from 'start-write';
+
+export const build = () => start(reporter())(
+  files('src/**/*.png'),
+  read(),
+  write('build/')
+);
 ```
 
 but it uses Streams and should be the preferred way to copy files, especially for large and/or binary formats like images.
@@ -50,4 +54,4 @@ This task relies on array of files and provides the same, see [documentation](ht
 
 `copy(dir)`
 
-* `dir` – output directory
+* `dir` – output directory, will be created automatically if it doesn't exists
